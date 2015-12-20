@@ -1,4 +1,4 @@
-# image-scramble
+# photo-scramble
 classic image tile scramble game written in JavaScript
 
-![image scramble screenshot](screenshot.png)
+![photo scramble screenshot](screenshot.png)
