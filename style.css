@@ -6,693 +6,196 @@
   left: 0px;
   top: 0px;
   /* reverse values for backgroud position */
-  background-position: left 0px top 0px;
+  background-position: left -55px top 0px;
 }
 
 #board div:nth-child(2) {
-  left: 50px;
+  left: 80px;
   top: 0px;
   /* reverse values for backgroud position */
-  background-position: left -50px top 0px;
+  background-position: left -135px top 0px;
 }
 
 #board div:nth-child(3) {
-  left: 100px;
+  left: 160px;
   top: 0px;
   /* reverse values for backgroud position */
-  background-position: left -100px top 0px;
+  background-position: left -215px top 0px;
 }
 
 #board div:nth-child(4) {
-  left: 150px;
+  left: 240px;
   top: 0px;
   /* reverse values for backgroud position */
-  background-position: left -150px top 0px;
+  background-position: left -295px top 0px;
 }
 
 #board div:nth-child(5) {
-  left: 200px;
-  top: 0px;
+  left: 0px;
+  top: 80px;
   /* reverse values for backgroud position */
-  background-position: left -200px top 0px;
+  background-position: left -55px top -80px;
 }
 
 #board div:nth-child(6) {
-  left: 250px;
-  top: 0px;
+  left: 80px;
+  top: 80px;
   /* reverse values for backgroud position */
-  background-position: left -250px top 0px;
+  background-position: left -135px top -80px;
 }
 
 #board div:nth-child(7) {
-  left: 300px;
-  top: 0px;
+  left: 160px;
+  top: 80px;
   /* reverse values for backgroud position */
-  background-position: left -300px top 0px;
+  background-position: left -215px top -80px;
 }
 
 #board div:nth-child(8) {
-  left: 350px;
-  top: 0px;
+  left: 240px;
+  top: 80px;
   /* reverse values for backgroud position */
-  background-position: left -350px top 0px;
+  background-position: left -295px top -80px;
 }
 
 #board div:nth-child(9) {
-  left: 400px;
-  top: 0px;
+  left: 0px;
+  top: 160px;
   /* reverse values for backgroud position */
-  background-position: left -400px top 0px;
+  background-position: left -55px top -160px;
 }
 
 #board div:nth-child(10) {
-  left: 450px;
-  top: 0px;
+  left: 80px;
+  top: 160px;
   /* reverse values for backgroud position */
-  background-position: left -450px top 0px;
+  background-position: left -135px top -160px;
 }
 
 #board div:nth-child(11) {
-  left: 0px;
-  top: 50px;
+  left: 160px;
+  top: 160px;
   /* reverse values for backgroud position */
-  background-position: left 0px top -50px;
+  background-position: left -215px top -160px;
 }
 
 #board div:nth-child(12) {
-  left: 50px;
-  top: 50px;
+  left: 240px;
+  top: 160px;
   /* reverse values for backgroud position */
-  background-position: left -50px top -50px;
+  background-position: left -295px top -160px;
 }
 
 #board div:nth-child(13) {
-  left: 100px;
-  top: 50px;
+  left: 0px;
+  top: 240px;
   /* reverse values for backgroud position */
-  background-position: left -100px top -50px;
+  background-position: left -55px top -240px;
 }
 
 #board div:nth-child(14) {
-  left: 150px;
-  top: 50px;
+  left: 80px;
+  top: 240px;
   /* reverse values for backgroud position */
-  background-position: left -150px top -50px;
+  background-position: left -135px top -240px;
 }
 
 #board div:nth-child(15) {
-  left: 200px;
-  top: 50px;
+  left: 160px;
+  top: 240px;
   /* reverse values for backgroud position */
-  background-position: left -200px top -50px;
+  background-position: left -215px top -240px;
 }
 
 #board div:nth-child(16) {
-  left: 250px;
-  top: 50px;
+  left: 240px;
+  top: 240px;
   /* reverse values for backgroud position */
-  background-position: left -250px top -50px;
+  background-position: left -295px top -240px;
 }
 
 #board div:nth-child(17) {
-  left: 300px;
-  top: 50px;
+  left: 0px;
+  top: 320px;
   /* reverse values for backgroud position */
-  background-position: left -300px top -50px;
+  background-position: left -55px top -320px;
 }
 
 #board div:nth-child(18) {
-  left: 350px;
-  top: 50px;
+  left: 80px;
+  top: 320px;
   /* reverse values for backgroud position */
-  background-position: left -350px top -50px;
+  background-position: left -135px top -320px;
 }
 
 #board div:nth-child(19) {
-  left: 400px;
-  top: 50px;
+  left: 160px;
+  top: 320px;
   /* reverse values for backgroud position */
-  background-position: left -400px top -50px;
+  background-position: left -215px top -320px;
 }
 
 #board div:nth-child(20) {
-  left: 450px;
-  top: 50px;
+  left: 240px;
+  top: 320px;
   /* reverse values for backgroud position */
-  background-position: left -450px top -50px;
+  background-position: left -295px top -320px;
 }
 
 #board div:nth-child(21) {
   left: 0px;
-  top: 100px;
+  top: 400px;
   /* reverse values for backgroud position */
-  background-position: left 0px top -100px;
+  background-position: left -55px top -400px;
 }
 
 #board div:nth-child(22) {
-  left: 50px;
-  top: 100px;
+  left: 80px;
+  top: 400px;
   /* reverse values for backgroud position */
-  background-position: left -50px top -100px;
+  background-position: left -135px top -400px;
 }
 
 #board div:nth-child(23) {
-  left: 100px;
-  top: 100px;
+  left: 160px;
+  top: 400px;
   /* reverse values for backgroud position */
-  background-position: left -100px top -100px;
+  background-position: left -215px top -400px;
 }
 
 #board div:nth-child(24) {
-  left: 150px;
-  top: 100px;
+  left: 240px;
+  top: 400px;
   /* reverse values for backgroud position */
-  background-position: left -150px top -100px;
+  background-position: left -295px top -400px;
 }
 
 #board div:nth-child(25) {
-  left: 200px;
-  top: 100px;
+  left: 0px;
+  top: 480px;
   /* reverse values for backgroud position */
-  background-position: left -200px top -100px;
+  background-position: left -55px top -480px;
 }
 
 #board div:nth-child(26) {
-  left: 250px;
-  top: 100px;
+  left: 80px;
+  top: 480px;
   /* reverse values for backgroud position */
-  background-position: left -250px top -100px;
+  background-position: left -135px top -480px;
 }
 
 #board div:nth-child(27) {
-  left: 300px;
-  top: 100px;
+  left: 160px;
+  top: 480px;
   /* reverse values for backgroud position */
-  background-position: left -300px top -100px;
+  background-position: left -215px top -480px;
 }
 
 #board div:nth-child(28) {
-  left: 350px;
-  top: 100px;
+  left: 240px;
+  top: 480px;
   /* reverse values for backgroud position */
-  background-position: left -350px top -100px;
-}
-
-#board div:nth-child(29) {
-  left: 400px;
-  top: 100px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -100px;
-}
-
-#board div:nth-child(30) {
-  left: 450px;
-  top: 100px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -100px;
-}
-
-#board div:nth-child(31) {
-  left: 0px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -150px;
-}
-
-#board div:nth-child(32) {
-  left: 50px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -150px;
-}
-
-#board div:nth-child(33) {
-  left: 100px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -150px;
-}
-
-#board div:nth-child(34) {
-  left: 150px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -150px;
-}
-
-#board div:nth-child(35) {
-  left: 200px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -150px;
-}
-
-#board div:nth-child(36) {
-  left: 250px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -150px;
-}
-
-#board div:nth-child(37) {
-  left: 300px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -150px;
-}
-
-#board div:nth-child(38) {
-  left: 350px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -150px;
-}
-
-#board div:nth-child(39) {
-  left: 400px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -150px;
-}
-
-#board div:nth-child(40) {
-  left: 450px;
-  top: 150px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -150px;
-}
-
-#board div:nth-child(41) {
-  left: 0px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -200px;
-}
-
-#board div:nth-child(42) {
-  left: 50px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -200px;
-}
-
-#board div:nth-child(43) {
-  left: 100px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -200px;
-}
-
-#board div:nth-child(44) {
-  left: 150px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -200px;
-}
-
-#board div:nth-child(45) {
-  left: 200px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -200px;
-}
-
-#board div:nth-child(46) {
-  left: 250px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -200px;
-}
-
-#board div:nth-child(47) {
-  left: 300px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -200px;
-}
-
-#board div:nth-child(48) {
-  left: 350px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -200px;
-}
-
-#board div:nth-child(49) {
-  left: 400px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -200px;
-}
-
-#board div:nth-child(50) {
-  left: 450px;
-  top: 200px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -200px;
-}
-
-#board div:nth-child(51) {
-  left: 0px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -250px;
-}
-
-#board div:nth-child(52) {
-  left: 50px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -250px;
-}
-
-#board div:nth-child(53) {
-  left: 100px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -250px;
-}
-
-#board div:nth-child(54) {
-  left: 150px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -250px;
-}
-
-#board div:nth-child(55) {
-  left: 200px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -250px;
-}
-
-#board div:nth-child(56) {
-  left: 250px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -250px;
-}
-
-#board div:nth-child(57) {
-  left: 300px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -250px;
-}
-
-#board div:nth-child(58) {
-  left: 350px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -250px;
-}
-
-#board div:nth-child(59) {
-  left: 400px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -250px;
-}
-
-#board div:nth-child(60) {
-  left: 450px;
-  top: 250px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -250px;
-}
-
-#board div:nth-child(61) {
-  left: 0px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -300px;
-}
-
-#board div:nth-child(62) {
-  left: 50px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -300px;
-}
-
-#board div:nth-child(63) {
-  left: 100px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -300px;
-}
-
-#board div:nth-child(64) {
-  left: 150px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -300px;
-}
-
-#board div:nth-child(65) {
-  left: 200px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -300px;
-}
-
-#board div:nth-child(66) {
-  left: 250px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -300px;
-}
-
-#board div:nth-child(67) {
-  left: 300px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -300px;
-}
-
-#board div:nth-child(68) {
-  left: 350px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -300px;
-}
-
-#board div:nth-child(69) {
-  left: 400px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -300px;
-}
-
-#board div:nth-child(70) {
-  left: 450px;
-  top: 300px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -300px;
-}
-
-#board div:nth-child(71) {
-  left: 0px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -350px;
-}
-
-#board div:nth-child(72) {
-  left: 50px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -350px;
-}
-
-#board div:nth-child(73) {
-  left: 100px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -350px;
-}
-
-#board div:nth-child(74) {
-  left: 150px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -350px;
-}
-
-#board div:nth-child(75) {
-  left: 200px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -350px;
-}
-
-#board div:nth-child(76) {
-  left: 250px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -350px;
-}
-
-#board div:nth-child(77) {
-  left: 300px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -350px;
-}
-
-#board div:nth-child(78) {
-  left: 350px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -350px;
-}
-
-#board div:nth-child(79) {
-  left: 400px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -350px;
-}
-
-#board div:nth-child(80) {
-  left: 450px;
-  top: 350px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -350px;
-}
-
-#board div:nth-child(81) {
-  left: 0px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -400px;
-}
-
-#board div:nth-child(82) {
-  left: 50px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -400px;
-}
-
-#board div:nth-child(83) {
-  left: 100px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -400px;
-}
-
-#board div:nth-child(84) {
-  left: 150px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -400px;
-}
-
-#board div:nth-child(85) {
-  left: 200px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -400px;
-}
-
-#board div:nth-child(86) {
-  left: 250px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -400px;
-}
-
-#board div:nth-child(87) {
-  left: 300px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -400px;
-}
-
-#board div:nth-child(88) {
-  left: 350px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -400px;
-}
-
-#board div:nth-child(89) {
-  left: 400px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -400px;
-}
-
-#board div:nth-child(90) {
-  left: 450px;
-  top: 400px;
-  /* reverse values for backgroud position */
-  background-position: left -450px top -400px;
-}
-
-#board div:nth-child(91) {
-  left: 0px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left 0px top -450px;
-}
-
-#board div:nth-child(92) {
-  left: 50px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -50px top -450px;
-}
-
-#board div:nth-child(93) {
-  left: 100px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -100px top -450px;
-}
-
-#board div:nth-child(94) {
-  left: 150px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -150px top -450px;
-}
-
-#board div:nth-child(95) {
-  left: 200px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -200px top -450px;
-}
-
-#board div:nth-child(96) {
-  left: 250px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -250px top -450px;
-}
-
-#board div:nth-child(97) {
-  left: 300px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -300px top -450px;
-}
-
-#board div:nth-child(98) {
-  left: 350px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -350px top -450px;
-}
-
-#board div:nth-child(99) {
-  left: 400px;
-  top: 450px;
-  /* reverse values for backgroud position */
-  background-position: left -400px top -450px;
+  background-position: left -295px top -480px;
 }
 
 body {
@@ -702,7 +205,7 @@ body {
 
 .wrapper {
   background: white;
-  width: 500px;
+  width: 320px;
   padding: 50px;
   margin: 50px auto;
 }
@@ -721,26 +224,29 @@ header {
       -ms-flex-align: center;
           align-items: center;
 }
+header h1 {
+  font-size: 1.5rem;
+}
 header button {
   padding: 10px;
 }
 
 #board {
   background: #fff;
-  width: 500px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
   position: relative;
   margin: 0 auto;
 }
 #board div {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: white;
   position: absolute;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
   background-image: url(https://farm9.staticflickr.com/8143/7491078032_283a13705c_z_d.jpg);
   background-repeat: no-repeat;
-  background-size: 1100%;
+  background-size: 600%;
   background-blend-mode: multiply;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
@@ -751,4 +257,42 @@ header button {
   background-color: pink;
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+}
+
+.hide {
+  display: none;
+}
+
+.success {
+  -webkit-filter: grayscale(0) !important;
+          filter: grayscale(0) !important;
+  -webkit-animation: greenFade 1s;
+          animation: greenFade 1s;
+  background-color: white;
+}
+
+@-webkit-keyframes greenFade {
+  0% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    background-color: green;
+  }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    background-color: white;
+  }
+}
+
+@keyframes greenFade {
+  0% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    background-color: green;
+  }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+    background-color: white;
+  }
 }

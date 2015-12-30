@@ -1,9 +1,10 @@
 var board = document.getElementById('board');
 var shuffleBtn = document.getElementById('shuffleBtn');
 var speed = 0.25;
-var boardSize = 500;
-var tileSize = 50;
+var boardSize = 320;
+var tileSize = 80;
 var tileArray = [];
+var score = 0;
 
 // set the invisible tile at random
 var activeColumn = Math.ceil(Math.random() * 4) * tileSize;
@@ -15,16 +16,20 @@ var Tile = function(board, row, col) {
   var _originCol = col;
   var _tile = document.createElement('div');
 
-  var _pointMode = false;
-    if (col === _originCol && row === _originRow) {
-      _pointMode = true;
-    }
+  var _subtract = false;
 
   _tile.style.left = col + "px";
   _tile.style.top = row + "px";
 
   board.appendChild(_tile);
   _tile.addEventListener("click", function() {
+
+    if (col === _originCol && row === _originRow) {
+      _subtract = true;
+    } else {
+      _subtract = false;
+    }
+
     console.log(row/tileSize, col/tileSize, activeRow/tileSize, activeColumn/tileSize);
     if ((col + tileSize) === activeColumn && row === activeRow) {
       console.log('you can move right');
@@ -32,7 +37,8 @@ var Tile = function(board, row, col) {
       activeRow = row;
       col += tileSize
       TweenMax.to(_tile, speed, {
-        left: col + "px"
+        left: col + "px",
+        onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((col - tileSize) === activeColumn && row === activeRow) {
       console.log('you can move left');
@@ -40,7 +46,8 @@ var Tile = function(board, row, col) {
       activeRow = row;
       col -= tileSize;
       TweenMax.to(_tile, speed, {
-        left: col + "px"
+        left: col + "px",
+        onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((row + tileSize) === activeRow && col === activeColumn) {
       console.log('you can move down');
@@ -48,7 +55,8 @@ var Tile = function(board, row, col) {
       activeRow = row;
       row += tileSize;
       TweenMax.to(_tile, speed, {
-        top: row + "px"
+        top: row + "px",
+        onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((row - tileSize) === activeRow && col === activeColumn) {
       console.log('you can move up');
@@ -56,7 +64,8 @@ var Tile = function(board, row, col) {
       activeRow = row;
       row -= tileSize;
       TweenMax.to(_tile, speed, {
-        top: row + "px"
+        top: row + "px",
+        onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else {
       console.log('you can\'t move');
@@ -81,8 +90,8 @@ var Tile = function(board, row, col) {
 }
 
 // set game board
-for (var rowCount = 0; rowCount < 7; rowCount++) {
-  for (var colCount = 0; colCount < 10; colCount++) {
+for (var rowCount = 0; rowCount < 4; rowCount++) {
+  for (var colCount = 0; colCount < 4; colCount++) {
     var spacer = false;
 
     tileArray.push(new Tile(board, rowCount*tileSize, colCount*tileSize));
@@ -93,9 +102,9 @@ shuffleBtn.addEventListener('click', function() {
   tileArray.sort(function() { return 0.5 - Math.random() });
 
   // shuffle game board
-  for (var rowCount = 0; rowCount < 7; rowCount++) {
-    for (var colCount = 0; colCount < 10; colCount++) {
-      var loc = colCount + (rowCount*10);
+  for (var rowCount = 0; rowCount < 4; rowCount++) {
+    for (var colCount = 0; colCount < 4; colCount++) {
+      var loc = colCount + (rowCount*4);
       if (rowCount == (activeRow/tileSize) && colCount == (activeColumn/tileSize)) {
         tileArray[loc].hide();
       }
@@ -103,3 +112,25 @@ shuffleBtn.addEventListener('click', function() {
     }
   }
 });
+
+
+checkScore = function(thisCol, originCol, thisRow, originRow, tile, subtract) {
+	if ( thisCol === originCol && thisRow === originRow ) {
+			score += 1;
+			//tile.css('background-color', 'green');
+       tile.classList.add('success');
+	} else if (subtract) {
+		console.log('subtract = ' + subtract);
+		score -= 1;
+		//tile.css('background-color', '#ccc');
+		tile.classList.remove('success');
+    console.log('take a point away');
+	}
+	if (score === tileArray.length-1) {
+		gameOver();
+	}
+}
+
+gameOver = function() {
+	alert('game over');
+};
