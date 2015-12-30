@@ -6,34 +6,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Photo Scramble</h1>
-    <form><input type="checkbox" id="showNumbers" />Show Numbers</form>
-    <div class="wrapper">
-      <div class="item" data-row="1" data-col="1" data-origin-row="1" data-origin-col="1"></div>
-      <div class="item" data-row="1" data-col="2" data-origin-row="1" data-origin-col="2"></div>
-      <div class="item" data-row="1" data-col="3" data-origin-row="1" data-origin-col="3"></div>
-      <div class="item" data-row="1" data-col="4" data-origin-row="1" data-origin-col="4"></div>
+  <div class="wrapper">
+    <header>
+      <h1>Image Scramble</h1>
+      <button id="shuffleBtn">Shuffle</button>
+    </header>
+    <main id="board">
+    </main>
+  </div>
 
-      <div class="item" data-row="2" data-col="1" data-origin-row="2" data-origin-col="1"></div>
-      <div class="item" data-row="2" data-col="2" data-origin-row="2" data-origin-col="2"></div>
-      <div class="item" data-row="2" data-col="3" data-origin-row="2" data-origin-col="3"></div>
-      <div class="item" data-row="2" data-col="4" data-origin-row="2" data-origin-col="4"></div>
-
-      <div class="item" data-row="3" data-col="1" data-origin-row="3" data-origin-col="1"></div>
-      <div class="item" data-row="3" data-col="2" data-origin-row="3" data-origin-col="2"></div>
-      <div class="item" data-row="3" data-col="3" data-origin-row="3" data-origin-col="3"></div>
-      <div class="item" data-row="3" data-col="4" data-origin-row="3" data-origin-col="4"></div>
-
-      <div class="item" data-row="4" data-col="1" data-origin-row="4" data-origin-col="1"></div>
-      <div class="item" data-row="4" data-col="2" data-origin-row="4" data-origin-col="2"></div>
-      <div class="item" data-row="4" data-col="3" data-origin-row="4" data-origin-col="3"></div>
-      <div class="item" data-row="4" data-col="4" data-origin-row="4" data-origin-col="4"></div>
-    </div>
-  </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.3/fastclick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

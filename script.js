@@ -1,146 +1,105 @@
-var tile = 80,
-  speed = 150,
-  i,
-  j,
-  columns,
-  rows,
-  thisCol,
-  thisRow,
-  originCol,
-  originRow,
-  gameBoard,
-  items,
-  score = 0,
-  checkScore,
-  gameOver;
+var board = document.getElementById('board');
+var shuffleBtn = document.getElementById('shuffleBtn');
+var speed = 0.25;
+var boardSize = 500;
+var tileSize = 50;
+var tileArray = [];
 
-gameBoard = [
-  { row: 1, column: 1},
-  { row: 1, column: 2},
-  { row: 1, column: 3},
-  { row: 1, column: 4},
-  { row: 2, column: 1},
-  { row: 2, column: 2},
-  { row: 2, column: 3},
-  { row: 2, column: 4},
-  { row: 3, column: 1},
-  { row: 3, column: 2},
-  { row: 3, column: 3},
-  { row: 3, column: 4},
-  { row: 4, column: 1},
-  { row: 4, column: 2},
-  { row: 4, column: 3},
-  { row: 4, column: 4},
-];
+// set the invisible tile at random
+var activeColumn = Math.ceil(Math.random() * 4) * tileSize;
+var activeRow = Math.ceil(Math.random() * 4) * tileSize;
+console.log(activeRow/tileSize, activeColumn/tileSize);
 
-$('#showNumbers').click(function() {
-  $('main').toggleClass('numbers');
-});
+var Tile = function(board, row, col) {
+  var _originRow = row;
+  var _originCol = col;
+  var _tile = document.createElement('div');
 
-checkScore = function(thisCol, originCol, thisRow, originRow, tile, subtract) {
-  if( thisCol === originCol && thisRow === originRow ) {
-    score += 1;
-    //tile.css('background-color', 'green');
-    tile.addClass('success');
-  } else if (subtract) {
-    console.log('subtract = ' + subtract);
-    score -= 1;
-    //tile.css('background-color', '#ccc');
-    tile.removeClass('success');
-    console.log('take a point away');
-  }
-  if (score === gameBoard.length-1) {
-    gameOver();
-  }
-};
-
-gameOver = function() {
-  alert('game over');
-};
-
-$(function() {
-  FastClick.attach(document.body);
-  gameBoard.sort(function() {
-    return 0.5 - Math.random();
-  });
-
-  // move the tiles to random order
-  items = $('.item');
-  i = 0; // left value
-  j = 0; // top value
-  items.each( function(key, value){
-    var thisTile = $(this);
-    thisTile.css('left', ((gameBoard[key].column - 1) * tile) + 'px');
-    thisTile.css('top', ((gameBoard[key].row - 1) * tile) + 'px');
-    thisTile.attr('data-col', gameBoard[key].column);
-    thisTile.attr('data-row', gameBoard[key].row);
-    checkScore(
-      gameBoard[key].column,
-      parseInt(thisTile.attr('data-origin-col')),
-      gameBoard[key].row,
-      parseInt(thisTile.attr('data-origin-row')),
-      $(this)
-    );
-  });
-
-  // set the invisible tile at random
-  column = Math.ceil(Math.random() * 4);
-  row = Math.ceil(Math.random() * 4);
-  $('.item[data-col=' + column + '][data-row=' + row + ']').css('display', 'none');
-
-  // set click functions for tiles
-  $('.item').click(function() {
-    var currentTile = $(this);
-    thisCol = parseInt(currentTile.attr('data-col'));
-    thisRow = parseInt(currentTile.attr('data-row'));
-    originCol = parseInt(currentTile.attr('data-origin-col'));
-    originRow = parseInt(currentTile.attr('data-origin-row'));
-
-    var pointMode = false;
-    if (thisCol === originCol && thisRow === originRow) {
-      pointMode = true;
+  var _pointMode = false;
+    if (col === _originCol && row === _originRow) {
+      _pointMode = true;
     }
 
-    // checkScore(thisCol, originCol, thisRow, originRow, $(this), pointMode);
+  _tile.style.left = col + "px";
+  _tile.style.top = row + "px";
 
-    if ((thisCol + 1) === column && thisRow === row) {
-      // console.log('you can move right');
-      column = thisCol;
-      row = thisRow;
-      currentTile.attr('data-col', thisCol + 1);
-      currentTile.animate({ left: '+=' + tile }, speed, function() {
-        checkScore(thisCol + 1, originCol, thisRow, originRow, currentTile, pointMode);
+  board.appendChild(_tile);
+  _tile.addEventListener("click", function() {
+    console.log(row/tileSize, col/tileSize, activeRow/tileSize, activeColumn/tileSize);
+    if ((col + tileSize) === activeColumn && row === activeRow) {
+      console.log('you can move right');
+      activeColumn = col;
+      activeRow = row;
+      col += tileSize
+      TweenMax.to(_tile, speed, {
+        left: col + "px"
       });
-    } else if ((thisCol - 1) === column && thisRow === row) {
-      // console.log('you can move left');
-      column = thisCol;
-      row = thisRow;
-      currentTile.attr('data-col', thisCol - 1);
-      currentTile.animate({ left: '-=' + tile }, speed, function() {
-        checkScore(thisCol - 1, originCol, thisRow, originRow, currentTile, pointMode);
+    } else if ((col - tileSize) === activeColumn && row === activeRow) {
+      console.log('you can move left');
+      activeColumn = col;
+      activeRow = row;
+      col -= tileSize;
+      TweenMax.to(_tile, speed, {
+        left: col + "px"
       });
-    } else if ((thisRow + 1) === row && thisCol === column) {
-      // console.log('you can move down');
-      column = thisCol;
-      row = thisRow;
-      currentTile.attr('data-row', thisRow + 1);
-      currentTile.animate({ top: '+=' + tile }, speed, function() {
-        checkScore(thisCol, originCol, thisRow + 1, originRow, currentTile, pointMode);
+    } else if ((row + tileSize) === activeRow && col === activeColumn) {
+      console.log('you can move down');
+      activeColumn = col;
+      activeRow = row;
+      row += tileSize;
+      TweenMax.to(_tile, speed, {
+        top: row + "px"
       });
-    } else if ((thisRow - 1) === row && thisCol === column) {
-      // console.log('you can move up');
-      column = thisCol;
-      row = thisRow;
-      currentTile.attr('data-row', thisRow - 1);
-      currentTile.animate({ top: '-=' + tile }, speed, function() {
-        checkScore(thisCol, originCol, thisRow - 1, originRow, currentTile, pointMode);
+    } else if ((row - tileSize) === activeRow && col === activeColumn) {
+      console.log('you can move up');
+      activeColumn = col;
+      activeRow = row;
+      row -= tileSize;
+      TweenMax.to(_tile, speed, {
+        top: row + "px"
       });
     } else {
-      // console.log('you can\'t move');
+      console.log('you can\'t move');
     }
-    console.log(score);
   });
 
+  return {
+    row: row,
+    col: col,
+    move: function(suffleCol, shuffleRow) {
+      row = shuffleRow;
+      col = suffleCol;
+      TweenMax.to(_tile, 3, {
+        top: row + "px",
+        left: col + "px"
+      });
+    },
+    hide: function() {
+      _tile.style.display = "none";
+    }
+  };
+}
 
+// set game board
+for (var rowCount = 0; rowCount < 7; rowCount++) {
+  for (var colCount = 0; colCount < 10; colCount++) {
+    var spacer = false;
 
+    tileArray.push(new Tile(board, rowCount*tileSize, colCount*tileSize));
+  }
+}
+
+shuffleBtn.addEventListener('click', function() {
+  tileArray.sort(function() { return 0.5 - Math.random() });
+
+  // shuffle game board
+  for (var rowCount = 0; rowCount < 7; rowCount++) {
+    for (var colCount = 0; colCount < 10; colCount++) {
+      var loc = colCount + (rowCount*10);
+      if (rowCount == (activeRow/tileSize) && colCount == (activeColumn/tileSize)) {
+        tileArray[loc].hide();
+      }
+      tileArray[loc].move(colCount*tileSize,rowCount*tileSize);
+    }
+  }
 });
