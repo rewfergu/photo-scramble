@@ -7,9 +7,9 @@ var tileArray = [];
 var score = 0;
 
 // set the invisible tile at random
-var activeColumn = Math.ceil(Math.random() * 4) * tileSize;
-var activeRow = Math.ceil(Math.random() * 4) * tileSize;
-console.log(activeRow/tileSize, activeColumn/tileSize);
+var activeColumn = Math.floor(Math.random() * 4) * tileSize;
+var activeRow = Math.floor(Math.random() * 4) * tileSize;
+console.log(activeRow / tileSize, activeColumn / tileSize);
 
 var Tile = function(board, row, col) {
   var _originRow = row;
@@ -18,11 +18,11 @@ var Tile = function(board, row, col) {
 
   var _subtract = false;
 
-  _tile.style.left = col + "px";
-  _tile.style.top = row + "px";
+  _tile.style.left = col + 'px';
+  _tile.style.top = row + 'px';
 
   board.appendChild(_tile);
-  _tile.addEventListener("click", function() {
+  _tile.addEventListener('click', function() {
 
     if (col === _originCol && row === _originRow) {
       _subtract = true;
@@ -30,14 +30,14 @@ var Tile = function(board, row, col) {
       _subtract = false;
     }
 
-    console.log(row/tileSize, col/tileSize, activeRow/tileSize, activeColumn/tileSize);
+    console.log(row / tileSize, col / tileSize, activeRow / tileSize, activeColumn / tileSize);
     if ((col + tileSize) === activeColumn && row === activeRow) {
       console.log('you can move right');
       activeColumn = col;
       activeRow = row;
-      col += tileSize
+      col += tileSize;
       TweenMax.to(_tile, speed, {
-        left: col + "px",
+        left: col + 'px',
         onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((col - tileSize) === activeColumn && row === activeRow) {
@@ -46,7 +46,7 @@ var Tile = function(board, row, col) {
       activeRow = row;
       col -= tileSize;
       TweenMax.to(_tile, speed, {
-        left: col + "px",
+        left: col + 'px',
         onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((row + tileSize) === activeRow && col === activeColumn) {
@@ -55,7 +55,7 @@ var Tile = function(board, row, col) {
       activeRow = row;
       row += tileSize;
       TweenMax.to(_tile, speed, {
-        top: row + "px",
+        top: row + 'px',
         onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else if ((row - tileSize) === activeRow && col === activeColumn) {
@@ -64,7 +64,7 @@ var Tile = function(board, row, col) {
       activeRow = row;
       row -= tileSize;
       TweenMax.to(_tile, speed, {
-        top: row + "px",
+        top: row + 'px',
         onComplete: checkScore(col, _originCol, row, _originRow, _tile, _subtract),
       });
     } else {
@@ -78,59 +78,67 @@ var Tile = function(board, row, col) {
     move: function(suffleCol, shuffleRow) {
       row = shuffleRow;
       col = suffleCol;
-      TweenMax.to(_tile, 3, {
-        top: row + "px",
-        left: col + "px"
+      TweenMax.to(_tile, 1, {
+        top: row + 'px',
+        left: col + 'px',
       });
     },
+
     hide: function() {
-      _tile.style.display = "none";
-    }
+      _tile.classList.add('hide');
+    },
   };
-}
+};
 
 // set game board
 for (var rowCount = 0; rowCount < 4; rowCount++) {
   for (var colCount = 0; colCount < 4; colCount++) {
-    var spacer = false;
-
-    tileArray.push(new Tile(board, rowCount*tileSize, colCount*tileSize));
+    tileArray.push(new Tile(board, rowCount * tileSize, colCount * tileSize));
   }
 }
 
 shuffleBtn.addEventListener('click', function() {
-  tileArray.sort(function() { return 0.5 - Math.random() });
+  tileArray.sort(function() {
+    return 0.5 - Math.random();
+  });
+
+  var spacer = document.querySelector('.hide');
+  if (spacer) {
+    spacer.classList.remove('hide');
+  }
+
+  console.log(activeRow / tileSize, activeColumn / tileSize);
 
   // shuffle game board
   for (var rowCount = 0; rowCount < 4; rowCount++) {
     for (var colCount = 0; colCount < 4; colCount++) {
-      var loc = colCount + (rowCount*4);
-      if (rowCount == (activeRow/tileSize) && colCount == (activeColumn/tileSize)) {
+      var loc = colCount + (rowCount * 4);
+      if (rowCount == (activeRow / tileSize) && colCount == (activeColumn / tileSize)) {
+        console.log('hide this tile');
         tileArray[loc].hide();
       }
-      tileArray[loc].move(colCount*tileSize,rowCount*tileSize);
+
+      tileArray[loc].move(colCount * tileSize, rowCount * tileSize);
     }
   }
 });
 
-
 checkScore = function(thisCol, originCol, thisRow, originRow, tile, subtract) {
-	if ( thisCol === originCol && thisRow === originRow ) {
-			score += 1;
-			//tile.css('background-color', 'green');
-       tile.classList.add('success');
-	} else if (subtract) {
-		console.log('subtract = ' + subtract);
-		score -= 1;
-		//tile.css('background-color', '#ccc');
-		tile.classList.remove('success');
+  if (thisCol === originCol && thisRow === originRow) {
+    score += 1;
+    tile.classList.add('success');
+  } else if (subtract) {
+    console.log('subtract = ' + subtract);
+    score -= 1;
+    tile.classList.remove('success');
     console.log('take a point away');
-	}
-	if (score === tileArray.length-1) {
-		gameOver();
-	}
-}
+  }
+
+  if (score === tileArray.length - 1) {
+    gameOver();
+  }
+};
 
 gameOver = function() {
-	alert('game over');
+  alert('game over');
 };
